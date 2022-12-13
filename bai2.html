@@ -7,28 +7,42 @@
     <title>Bài 2</title>
 </head>
 <body>
-    <label for="a">Nhập vào số</label>
-    <input type="text" id="a">
+    <label for="">Nhập số</label>
+    <input type="text">
     <button id="button">In ra tam giác</button>
     
     <script>
+        // Biến chứa chuỗi rỗng
         let string = '';
+
+        // Hàm in hình tam giác
         function numberOneTriangle(n) {
+            // Vòng lặp ngoài in ra dòng n
             for (let i = 1; i <= n; i++) {
+                // Vòng lặp trong in ra cột *
                 for (let j = 0; j < i; j++) {
-                    string += '*';
+                    string += '*'; 
                 }
                 string += '\n';
             }
             return string;
         }
 
+        // Lấy ra nút in hình tam giác
         const button = document.getElementById('button');
-        const list = document.querySelector('.list');
+
+        // Lắng nghe sự kiện khi click vào nút in hình tam giác
         button.onclick = function() {
-            const n = Number(document.getElementById('a').value);
+            // Số do người dùng nhập vào
+            const n = Number(document.querySelector('input').value);
+
+            // In ra kết quả
             alert(numberOneTriangle(n));
+
+            // Reset dữ liệu
             string = '';
+            document.querySelector('input').value = '';
+            document.querySelector('input').focus();
         }
     </script>
 </body>

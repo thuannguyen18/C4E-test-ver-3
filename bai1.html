@@ -7,42 +7,62 @@
     <title>Bài 1</title>
 </head>
 <body>
-    <h1>Tổng các số nguyên tố</h1>
+    <h1>Tính tổng các số nguyên tố</h1>
     <label for="a">Nhập số a</label>
-    <input type="text" id="a">
+    <br>
+    <input type="text" id="a" placeholder="a(a<b)...">
     <br>
     <label for="b">Nhập số b</label>
-    <input type="text" id="b">
     <br>
-    <button id="btn-submit">Tính</button>
+    <input type="text" id="b" placeholder="b...">
+    <br>
+    <button id="submit">Tính</button>
 
     <script>
         // Hàm kiểm tra số nguyên tố
-        function kiemTraSoNguyenTo(so) {
-            if (so < 2) return false;
+        function kiemTraSoNguyenTo(n) {
+            // Nếu số đó bé hơn 2 thì không phải là số nguyên tố
+            if (n < 2) {
+                return false;
+            }
 
-            for (let i = 2; i <= Math.sqrt(so); i++) {
-                if (so % i == 0) {
+            // Vòng lặp for chạy từ 2 cho đến căn bậc 2 của n
+            for (let i = 2; i <= Math.sqrt(n); i++) {
+                // Nếu n trong khoảng này n chia hết cho số nào khác ngoài 1 và n thì không phải là số nguyên tố
+                if (n % i == 0) {
                     return false;
                 }
             }
-
             return true;
         }
 
-        // Lấy ra element button
-        const button = document.getElementById('btn-submit');
-        // Lắng nghe sự kiện người dùng click vào nút 'Tính'
-        button.onclick = function() {
+        // Lấy ra nút submit
+        const submitBtn = document.getElementById('submit');
+
+        // Lắng nghe sự kiện người dùng click vào nút submit
+        submitBtn.onclick = function() {
+            // Lấy giá trị của 2 thẻ input
             let a = Number(document.getElementById('a').value);
             let b = Number(document.getElementById('b').value);
-            let tong = 0;
+
+            // Biến tổng chứa kết quả
+            let sum = 0;
+
+            // Vòng lặp trong khoảng a đến b
             for (a; a <= b; a++) {
+                // Nếu là số nguyên tố thì cộng vào biến sum
                 if (kiemTraSoNguyenTo(a)) {
-                    tong += a;
+                    sum += a;
                 }
             } 
-            alert('Tổng các số nguyên tố là: ' + tong);
+
+            // In ra kết quả
+            alert('Tổng các số nguyên tố là: ' + sum);
+            
+            // Reset giá trị thẻ input
+            document.getElementById('a').value = '';
+            document.getElementById('b').value = '';
+            document.getElementById('a').focus();
         }
     </script>
 
