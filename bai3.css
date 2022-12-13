@@ -1,0 +1,150 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: all 0.2s linear;
+}
+
+html {
+    font-family: "Poppins", sans-serif;
+}
+
+.grid {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* .col-3 {
+    width: calc(100% / 3);
+} */
+
+.header {
+    padding-top: 20px;
+}
+
+.header-title {
+    height: 100px;
+    width: 100px;
+}
+
+.header-navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-navbar-search {
+    border: 1px solid #BFC8E6;
+    width: 325px;
+    height: 65px;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+.header-navbar-search-icon {
+    color: #151b32;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.header-navbar-search-input {
+    height: 100%;
+    width: 90%;
+    border: none;
+    outline: none;
+    color: #151b32;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.header-navbar-list {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.header-navbar-item {
+    padding: 0 20px;
+    line-height: 65px;
+    margin-left: 10px;
+}
+
+.header-navbar-item-active {
+    background-color: #849FFF;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.header-navbar-item:hover {
+    border-radius: 5px;
+    background-color: #849FFF;
+    color: #fff;
+    cursor: pointer;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 327px);
+    gap: 109px;
+    margin-top: 50px;
+}
+
+.user {
+    background: #f5f5f7;
+    display: flex;
+    width: 100%;
+    height: 208px;
+    padding: 24px;
+    border-radius: 10px;
+}
+
+.user-img {
+    width: 97px;
+    height: 97px;
+    border-radius: 50%;
+}
+
+.user-info {
+    flex: 1;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.user-text {
+    font-size: 16px;
+}
+
+.user-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #151b32;
+}
+
+.user-contry {
+    font-size: 16px;
+    color: #151b32;
+}
+
+.user-tags {
+    margin-top: 20px;
+}
+
+.user-tag {
+    background: transparent;
+    border-radius: 15px;
+    border: 1px solid #BFC8E6;
+    color: #516FD4;
+    height: 18px;
+    padding: 5px;
+    min-width: 60px;
+    line-height: 7px;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.user-active {
+    background-color: #FBFCFF;
+    border: 1px solid #849FFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+<body>
+    <label for="a">Nhập vào số</label>
+    <input type="text" id="a">
+    <button id="button">In ra tam giác</button>
+    
+    <script>
+        let string = '';
+        function numberOneTriangle(n) {
+            for (let i = 1; i <= n; i++) {
+                for (let j = 0; j < i; j++) {
+                    string += '*';
+                }
+                string += '\n';
+            }
+            return string;
+        }
+
+        const button = document.getElementById('button');
+        const list = document.querySelector('.list');
+        button.onclick = function() {
+            const n = Number(document.getElementById('a').value);
+            alert(numberOneTriangle(n));
+            string = '';
+        }
+    </script>
+</body>
+</html>

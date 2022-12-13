@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+</head>
+<body>
+    <h1>Tổng các số nguyên tố</h1>
+    <label for="a">Nhập số a</label>
+    <input type="text" id="a">
+    <br>
+    <label for="b">Nhập số b</label>
+    <input type="text" id="b">
+    <br>
+    <button id="btn-submit">Tính</button>
+
+    <script>
+        // Hàm kiểm tra số nguyên tố
+        function kiemTraSoNguyenTo(so) {
+            if (so < 2) return false;
+
+            for (let i = 2; i <= Math.sqrt(so); i++) {
+                if (so % i == 0) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        // Lấy ra element button
+        const button = document.getElementById('btn-submit');
+        // Lắng nghe sự kiện người dùng click vào nút 'Tính'
+        button.onclick = function() {
+            let a = Number(document.getElementById('a').value);
+            let b = Number(document.getElementById('b').value);
+            let tong = 0;
+            for (a; a <= b; a++) {
+                if (kiemTraSoNguyenTo(a)) {
+                    tong += a;
+                }
+            } 
+            alert('Tổng các số nguyên tố là: ' + tong);
+        }
+    </script>
+
+</body>
+</html>
